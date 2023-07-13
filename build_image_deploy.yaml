@@ -1,0 +1,20 @@
+---
+- name: Build and Deploy Docker Image
+  hosts: web1
+  tasks:
+    - name: Build Docker image
+      docker_image:
+        name: Apache2
+        build:
+          path: .
+          dockerfile: Dockerfile
+        state: present
+
+    - name: Deploy Docker container
+      docker_container:
+        name: my-apache-container
+        image: Apache2
+        state: started
+        ports:
+          - "8000:80"
+
