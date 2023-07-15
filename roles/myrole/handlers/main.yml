@@ -1,2 +1,8 @@
 ---
 # handlers file for myrole
+ - name: Archive container
+   docker_image:
+        name: httpd
+        archive_path: /home/vagrant/ansible_project/roles/tarfile
+        source: save
+        state: present

@@ -1,2 +1,5 @@
 ---
 # defaults file for myrole
+dockerfile_path: /home/vagrant/ansible_project
+run_expose_path: 80 
+
